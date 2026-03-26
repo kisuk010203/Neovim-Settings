@@ -19,3 +19,4 @@ mapKey('<leader>h', ':nohl<cr>')
 -- indent
 mapKey('<', '<gv', 'v')
 mapKey('>', '>gv', 'v')
+
