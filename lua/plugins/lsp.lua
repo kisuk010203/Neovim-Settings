@@ -24,10 +24,13 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require('lspconfig')
-      lspconfig.lua_ls.setup({})
-      lspconfig.ts_ls.setup({})
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      lspconfig.lua_ls.setup({ capabilities = capabilities })
+      lspconfig.ts_ls.setup({ capabilities = capabilities })
 
       lspconfig.rust_analyzer.setup({
+        capabilities = capabilities,
         settings = {
           ['rust-analyzer'] = {
             inlayHints = {
@@ -40,10 +43,11 @@ return {
           },
         },
       })
-      lspconfig.pyright.setup({})
-      lspconfig.coq_lsp.setup({})    -- Coq / Rocq
-      lspconfig.ocamllsp.setup({})
+      lspconfig.pyright.setup({ capabilities = capabilities })
+      lspconfig.coq_lsp.setup({ capabilities = capabilities })    -- Coq / Rocq
+      lspconfig.ocamllsp.setup({ capabilities = capabilities })
       lspconfig.clangd.setup({
+        capabilities = capabilities,
         cmd = {
           '/opt/homebrew/opt/llvm/bin/clangd',
           '--compile-commands-dir=build',
