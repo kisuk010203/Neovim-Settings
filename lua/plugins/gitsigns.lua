@@ -19,5 +19,14 @@ return {
         map("n", "<leader>gd", gs.diffthis, "Diff this")
       end,
     })
+
+    -- Refresh gitsigns and neo-tree when a terminal job finishes (e.g. after git commit)
+    vim.api.nvim_create_autocmd("TermClose", {
+      callback = function()
+        require("gitsigns").refresh()
+        local ok, manager = pcall(require, "neo-tree.sources.manager")
+        if ok then manager.refresh("filesystem") end
+      end,
+    })
   end,
 }

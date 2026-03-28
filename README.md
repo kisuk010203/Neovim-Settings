@@ -206,4 +206,4 @@ Linters run automatically on save and when leaving insert mode.
 | Language | Linter | Install |
 |----------|--------|---------|
 | Python | `ruff` | auto-installed via Mason |
-| C / C++ | `cppcheck` | auto-installed via Mason |
+| C / C++ | `clang-tidy` | via `clangd` LSP (already configured) |
