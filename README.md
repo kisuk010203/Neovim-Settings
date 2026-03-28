@@ -46,8 +46,15 @@ Leader key: `Space`
 |-----|--------|
 | `K` | Hover documentation |
 | `gd` | Go to definition |
+| `gi` | Go to implementation |
+| `gr` | References (Telescope) |
+| `<leader>D` | Type definition |
+| `<leader>rn` | Rename symbol |
 | `<leader>ca` | Code actions |
+| `<leader>fw` | Workspace symbols (Telescope) |
 | `<leader>ih` | Toggle inlay hints |
+| `]d` / `[d` | Next / previous diagnostic |
+| `<leader>od` | Open diagnostic float |
 
 ### Completion (nvim-cmp)
 
@@ -132,6 +139,13 @@ Format-on-save is also enabled automatically.
 | `<C-\>` | Toggle floating terminal |
 | `2<C-\>`, `3<C-\>` | Open/toggle additional terminal instances |
 
+### Symbol Outline (aerial.nvim)
+
+| Key | Action |
+|-----|--------|
+| `<leader>o` | Toggle symbol outline panel |
+| `<leader>fs` | Fuzzy search symbols in current file (Telescope) |
+
 ### Editing
 
 | Key | Action |
@@ -156,7 +170,10 @@ Format-on-save is also enabled automatically.
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git diff markers and hunk actions |
 | [diffview.nvim](https://github.com/sindrets/diffview.nvim) | Side-by-side git diff and file history |
 | [conform.nvim](https://github.com/stevearc/conform.nvim) | Auto-formatting |
-| [nvim-lint](https://github.com/mfussenegger/nvim-lint) | Linting (ruff for Python, cppcheck for C/C++) |
+| [nvim-lint](https://github.com/mfussenegger/nvim-lint) | Linting (ruff for Python, eslint_d for JS/TS) |
+| [aerial.nvim](https://github.com/stevearc/aerial.nvim) | Symbol outline sidebar |
+| [copilot.lua](https://github.com/zbirenbaum/copilot.lua) | GitHub Copilot AI completion |
+| [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp) | Copilot source for nvim-cmp |
 | [trouble.nvim](https://github.com/folke/trouble.nvim) | Pretty diagnostics and quickfix list |
 | [nvim-dap](https://github.com/mfussenegger/nvim-dap) | Debug Adapter Protocol client |
 | [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) | UI for nvim-dap |
@@ -172,7 +189,7 @@ Format-on-save is also enabled automatically.
 | [alpha.nvim](https://github.com/goolord/alpha-nvim) | Start screen dashboard |
 | [nvim-autopairs](https://github.com/windwp/nvim-autopairs) | Auto-close brackets and quotes |
 | [Comment.nvim](https://github.com/numToStr/Comment.nvim) | Comment toggling |
-| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | Indentation guides |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | indentation guides |
 
 ## LSP Language Servers
 
@@ -206,4 +223,5 @@ Linters run automatically on save and when leaving insert mode.
 | Language | Linter | Install |
 |----------|--------|---------|
 | Python | `ruff` | auto-installed via Mason |
+| JavaScript / TypeScript | `eslint_d` | auto-installed via Mason |
 | C / C++ | `clang-tidy` | via `clangd` LSP (already configured) |

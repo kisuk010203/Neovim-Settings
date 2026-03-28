@@ -16,6 +16,7 @@ return {
       "hrsh7th/cmp-path",
       "saadparwaiz1/cmp_luasnip",
       "L3MON4D3/LuaSnip",
+      "zbirenbaum/copilot-cmp",
     },
     config = function()
       local cmp = require("cmp")
@@ -51,8 +52,9 @@ return {
           ["<C-e>"] = cmp.mapping.abort(),
         }),
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
+          { name = "copilot",  group_index = 1 },
+          { name = "nvim_lsp", group_index = 1 },
+          { name = "luasnip",  group_index = 1 },
         }, {
           { name = "buffer" },
           { name = "path" },

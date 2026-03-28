@@ -69,13 +69,19 @@ return {
         end,
       })
 
-      -- vim.lsp.buf.hover
-      -- vim.lsp.buf.definition
-      -- vim.lsp.buf.code_action
+      local telescope = require('telescope.builtin')
 
       keyMapper('K', vim.lsp.buf.hover)
       keyMapper('gd', vim.lsp.buf.definition)
+      keyMapper('gi', vim.lsp.buf.implementation)
+      keyMapper('gr', telescope.lsp_references)
+      keyMapper('<leader>D', vim.lsp.buf.type_definition)
+      keyMapper('<leader>rn', vim.lsp.buf.rename)
       keyMapper('<leader>ca', vim.lsp.buf.code_action)
+      keyMapper('<leader>fw', telescope.lsp_workspace_symbols)
+      keyMapper(']d', vim.diagnostic.goto_next)
+      keyMapper('[d', vim.diagnostic.goto_prev)
+      keyMapper('<leader>od', vim.diagnostic.open_float)
       keyMapper('<leader>ih', function()
         local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
         vim.lsp.inlay_hint.enable(not enabled, { bufnr = 0 })
